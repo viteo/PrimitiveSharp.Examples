@@ -5,7 +5,7 @@ using SixLabors.ImageSharp.PixelFormats;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace primitive.Console
+namespace PrimitiveSharp.Console
 {
     [HelpOption]
     class PrimitiveCS
