@@ -1,0 +1,3 @@
+[submodule "src/PrimitiveSharp.Core"]
+	path = src/PrimitiveSharp.Core
+	url = https://github.com/viteo/PrimitiveSharp.Core.git

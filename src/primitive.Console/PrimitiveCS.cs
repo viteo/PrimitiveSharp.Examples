@@ -1,5 +1,5 @@
 ﻿using McMaster.Extensions.CommandLineUtils;
-using primitive.Core;
+using PrimitiveSharp.Core;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using System;
@@ -99,7 +99,7 @@ namespace primitive.Console
 
             // determine background color
             if (String.IsNullOrEmpty(Background))
-                parameters.Background = Core.Core.AverageImageColor(inputImage);
+                parameters.Background = Core.AverageImageColor(inputImage);
             else
                 parameters.Background = Rgba32.FromHex(Background);
 

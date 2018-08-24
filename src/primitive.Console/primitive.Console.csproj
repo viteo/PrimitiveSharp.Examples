@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\primitive.Core\primitive.Core.csproj" />
+    <ProjectReference Include="..\PrimitiveSharp.Core\src\PrimitiveSharp.Core\PrimitiveSharp.Core.csproj" />
   </ItemGroup>
 
 </Project>
