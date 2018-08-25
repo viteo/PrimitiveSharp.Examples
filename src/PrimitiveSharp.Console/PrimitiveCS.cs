@@ -62,7 +62,7 @@ namespace PrimitiveSharp.Console
         public int? Workers { get; }
 
         [Option(Description = "Shape probe count",
-            Template = "-p|-probe")]
+            Template = "-p|--probe")]
         public int? ShapeProbeCount { get; }
 
         [Option(Description = "Shape age",
