@@ -61,13 +61,13 @@ namespace PrimitiveSharp.Console
             Template = "-j")]
         public int? Workers { get; }
 
-        [Option(Description = "Verbose output",
-            Template = "-v")]
-        public bool Verbose { get; }
+        [Option(Description = "Shape probe count",
+            Template = "-p|-probe")]
+        public int? ShapeProbeCount { get; }
 
-        [Option(Description = "Very verbose output",
-            Template = "-vv")]
-        public bool VeryVerbose { get; }
+        [Option(Description = "Shape age",
+            Template = "-age")]
+        public int? ShapeAge { get; }
         #endregion
 
         private void OnExecute()
@@ -82,12 +82,8 @@ namespace PrimitiveSharp.Console
             parameters.CanvasResize = InputResize ?? 256;
             parameters.RenderSize = OutputSize ?? 1024;
             parameters.WorkersCount = Workers ?? 0;
-
-            // set log level
-            if (Verbose)
-                parameters.LogLevel = 1;
-            if (VeryVerbose)
-                parameters.LogLevel = 2;
+            parameters.ShapeProbeCount = ShapeProbeCount ?? 1000;
+            parameters.ShapeAge = ShapeAge ?? 100;
 
             // determine worker count
             if (parameters.WorkersCount < 1)
@@ -99,7 +95,7 @@ namespace PrimitiveSharp.Console
 
             // determine background color
             if (String.IsNullOrEmpty(Background))
-                parameters.Background = Core.AverageImageColor(inputImage);
+                parameters.Background = Core.Core.AverageImageColor(inputImage);
             else
                 parameters.Background = Rgba32.FromHex(Background);
 
