@@ -1,0 +1,17 @@
+﻿@model HomeViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+@foreach (var image in Model.Images)
+{
+    <div style="width:25%;float:left;">
+        <img src="@image.RelativePath" style="width:100%;" />
+    </div>
+}
+@foreach (var image in Model.Images)
+{
+    <div style="width:25%;float:left;">
+        <img src="/Home/PrimitiveSharpSvg?relativePath=@image.RelativePath" style="width:100%;" />
+    </div>
+}
