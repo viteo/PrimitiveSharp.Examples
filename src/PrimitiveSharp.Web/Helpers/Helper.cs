@@ -1,5 +1,4 @@
-﻿using Carbon.Color;
-using PrimitiveSharp.Core;
+﻿using PrimitiveSharp.Core;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using System;
