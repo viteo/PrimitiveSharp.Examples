@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimitiveSharp.Console", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimitiveSharp.Web", "src\PrimitiveSharp.Web\PrimitiveSharp.Web.csproj", "{58C31495-BD25-4516-9AB5-4EB01F740C94}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimitiveSharp.GUI", "src\PrimitiveSharp.GUI\PrimitiveSharp.GUI.csproj", "{9DC79CE5-68AF-42EA-A551-11125B9FEC25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{58C31495-BD25-4516-9AB5-4EB01F740C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58C31495-BD25-4516-9AB5-4EB01F740C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58C31495-BD25-4516-9AB5-4EB01F740C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DC79CE5-68AF-42EA-A551-11125B9FEC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC79CE5-68AF-42EA-A551-11125B9FEC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DC79CE5-68AF-42EA-A551-11125B9FEC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC79CE5-68AF-42EA-A551-11125B9FEC25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
