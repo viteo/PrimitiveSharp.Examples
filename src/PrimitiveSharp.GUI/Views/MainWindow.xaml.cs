@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace PrimitiveSharp.GUI
+namespace PrimitiveSharp.GUI.Views
 {
     public class MainWindow : Window
     {

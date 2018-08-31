@@ -1,0 +1,15 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:PrimitiveSharp.GUI.ViewModels;assembly=PrimitiveSharp.GUI"
+        Icon="resm:PrimitiveSharp.GUI.Assets.primitive-icon.ico"
+        Title="PrimitiveSharp.GUI">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+  <StackPanel>
+    <TextBlock Text="{Binding Greeting}"></TextBlock>
+    <Button Command="{Binding ChangeGreeting}" Content="{Binding Greeting}"></Button>
+    <Button Command="{Binding ChangeGreeting}">OK</Button>
+  </StackPanel>
+</Window>
