@@ -1,0 +1,60 @@
+﻿@model PrimitiveSharp.Core.ParametersModel
+
+@{
+    ViewData["Title"] = "Settings";
+}
+
+<h2>Settings</h2>
+
+<h4>SettingsModel</h4>
+<hr />
+<div class="row">
+    <form asp-action="Test" enctype="multipart/form-data" method="post" target="_blank">
+        <div class="form-group">
+            <input name="ImageFile" type="file" class="form-control" accept="image/jpeg, image/png" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="Nprimitives" class="control-label">Number of primitives</label>
+            <input asp-for="Nprimitives" class="form-control" min="1" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Mode" class="control-label"></label>
+            <select asp-for="Mode" asp-items="Html.GetEnumSelectList<PrimitiveSharp.Core.ShapeType>()"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="Alpha" class="control-label"></label>
+            <input asp-for="Alpha" class="form-control" min="0" max="255" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Repeat" class="control-label"></label>
+            <input asp-for="Repeat" class="form-control" min="0" />
+        </div>
+        <div class="form-group">
+            <label asp-for="CanvasResize" class="control-label"></label>
+            <input asp-for="CanvasResize" class="form-control" min="1" />
+        </div>
+        <div class="form-group">
+            <label asp-for="RenderSize" class="control-label"></label>
+            <input asp-for="RenderSize" class="form-control" min="1" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ShapeProbeCount" class="control-label"></label>
+            <input asp-for="ShapeProbeCount" class="form-control" min="1" />
+        </div>
+        <div class="form-group">
+            <label asp-for="ShapeAge" class="control-label"></label>
+            <input asp-for="ShapeAge" class="form-control" min="1" />
+        </div>
+        <div class="form-group">
+            <label asp-for="WorkersCount" class="control-label"></label>
+            <input asp-for="WorkersCount" class="form-control" min="1" />
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="submit" value="Render" class="btn btn-default" />
+        </div>
+    </form>
+</div>
+

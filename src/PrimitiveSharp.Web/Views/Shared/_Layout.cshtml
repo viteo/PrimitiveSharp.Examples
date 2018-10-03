@@ -1,11 +1,21 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>@ViewData["Title"] - PrimitiveSharp</title>
 </head>
 <body>
-    @RenderBody()
+    <ul>
+        <li><a asp-area="" asp-controller="Primitive" asp-action="Index">Main</a></li>
+        <li><a asp-area="" asp-controller="Primitive" asp-action="Settings">Settings</a></li>
+        <li><a asp-area="" asp-controller="Primitive" asp-action="Test">Test</a></li>
+    </ul>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2018 - PrimitiveSharp</p>
+        </footer>
+    </div>
 </body>
 </html>
