@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PrimitiveSharp.Core.Services;
+using PrimitiveSharp.Web.Services;
 
 namespace PrimitiveSharp.Web
 {
@@ -54,7 +54,7 @@ namespace PrimitiveSharp.Web
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Primitive}/{action=Index}/{id?}");
+                    template: "{controller=Primitive}/{action=Settings}/{id?}");
             });
         }
     }

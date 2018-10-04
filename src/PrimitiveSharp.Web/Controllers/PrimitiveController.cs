@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.FileProviders;
-using PrimitiveSharp.Core.Services;
+using PrimitiveSharp.Web.Services;
 using PrimitiveSharp.Web.Models;
 
 
@@ -31,20 +32,22 @@ namespace PrimitiveSharp.Web.Controllers
             return View(new Core.ParametersModel());
         }
 
-        public IActionResult Test(Core.ParametersModel settingsModel)
+        public IActionResult Result(Core.ParametersModel settingsModel)
         {
+            ImageFileModel imageFileModel = new ImageFileModel();
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             var file = HttpContext.Request.Form.Files.First();
-            string result;
             using (Stream stream = file.OpenReadStream())
             {
-                byte[] imageArr = new byte[file.Length];
-                stream.Read(imageArr);
-                result = renderService.GetSvg(imageArr, settingsModel);
-            }                 
-            return Content(result, "image/svg+xml");
-            //return View(Content(result, "image/svg+xml"));
+                imageFileModel.ImageInput = new byte[file.Length];
+                imageFileModel.ImageInputType = file.ContentType;
+                stream.Read(imageFileModel.ImageInput);
+                renderService.RenderImage(imageFileModel.ImageInput, settingsModel);
+                imageFileModel.ImageSVG = Encoding.ASCII.GetBytes(renderService.GetSvg());
+                imageFileModel.ImageResult = renderService.GetPng();
+            }
+            return View(imageFileModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

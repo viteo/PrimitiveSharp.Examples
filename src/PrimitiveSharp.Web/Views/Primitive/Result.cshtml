@@ -1,0 +1,13 @@
+﻿@model ImageFileModel
+
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h2>Result</h2>
+
+<img src="data:@Model.ImageInputType;base64,@Convert.ToBase64String(Model.ImageInput)" width="1024"/>
+<br />
+<img src="data:@Model.ImageSVGType;base64,@Convert.ToBase64String(Model.ImageSVG)" width="1024" />
+<br />
+<img src="@Model.ImageResult" width="1024" />
